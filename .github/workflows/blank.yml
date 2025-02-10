@@ -14,5 +14,16 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       run: |
         curl -H "Content-Type: application/json" \
-             -d '{"content": "오늘 할 일을 올려주세요!"}' \
-             $DISCORD_WEBHOOK
+             -d '{  
+                   "content": "오늘 할 일을 올려주세요!",
+                   "embeds": [
+                     {
+                       "title": "투두메이트 🎨",
+                       "description": "오늘 하루도 계획적으로 시작해요!",
+                       "image": {
+                         "url": "https://private-user-images.githubusercontent.com/178546020/411491874-9397886f-4626-4478-87c8-85c837419c7e.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzkxODAwODAsIm5iZiI6MTczOTE3OTc4MCwicGF0aCI6Ii8xNzg1NDYwMjAvNDExNDkxODc0LTkzOTc4ODZmLTQ2MjYtNDQ3OC04N2M4LTg1YzgzNzQxOWM3ZS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxMFQwOTI5NDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03YjkzMzM1MWM4YTcxZjVhYzdiY2M0YTZmZWE3ZWQ0ODQ5Y2FhZGEwZmNmNjNjZWQxMThhMzVjNmQwNjljYWQ0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.iUWNCT25FezXuq37wzVMD9Y9SeRmo88LpwnrlbzmKRI"
+                        }
+                      }
+                    ]
+                  }' \
+              $DISCORD_WEBHOOK
