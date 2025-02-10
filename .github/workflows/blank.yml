@@ -3,6 +3,7 @@ name: 디스코드 알림봇
 on: 
   schedule: # 정오 실행
     - cron: "0 12 * * *"
+  workflow_dispatch:
 
 jobs:
   send-discord-message:
