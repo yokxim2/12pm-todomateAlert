@@ -1,0 +1,15 @@
+name: 디스코드 알림봇
+
+on: 
+  schedule: # 정오 실행
+    - cron: "7 18 * * *"
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        content: "오늘 할 일을 올려주세요!"
